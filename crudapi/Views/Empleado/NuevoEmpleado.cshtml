@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model crudapi.Models.Empleado;
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        <h2>Nuevo empleado</h2>
+        <form asp-controller="Empleado" asp-action="NuevoEmpleado" method="post">
+            <div class="mb-3">
+                <label>Nombre</label>
+                <input class="form-control" asp-for ="Nombre" type="text" />
+            </div>
+            <div class="mb-3">
+                <label>Email</label>
+                <input class="form-control" asp-for ="Email" type="text" />
+            </div>
+            <div class="mb-3">
+                <label>Fecha de contrato</label>
+                <input class="form-control" asp-for="FechaContrato" type="date" />
+            </div>
+            <div class="mb-3">
+                <input class="form-check-input" asp-for="Actividad" type="checkbox" id="chkActivo" />
+                <label class="form-check-label" for="chkActivo">Actividad</label>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit">Guardar cambios</button>
+                <a asp-controller="Empleado" asp-action="Lista" class="btn btn-warning">volver</a>
+            </div>
+        </form>
+    </div>
+</div>
