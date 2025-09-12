@@ -14,7 +14,7 @@ namespace crudapi.Controllers
             _appDBContext = appDBContext;
 
         }
-        [HttpGet] // (no hace falta ponerlo, se sobreentiende)
+        [HttpGet] 
         public async Task<IActionResult> Lista()
         {
             List<Empleado> lista = await _appDBContext.Empleados.ToListAsync();

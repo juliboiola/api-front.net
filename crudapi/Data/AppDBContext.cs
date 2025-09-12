@@ -19,17 +19,17 @@ namespace crudapi.Data
             //base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Empleado>(tb => {
-                tb.HasKey(col => col.IdEmpleado);
+                tb.HasKey(col => col.IdEmpleado);  //define pkey
 
                 tb.Property(col => col.IdEmpleado)
-                .UseIdentityColumn()
+                .UseIdentityColumn()                    //configura que idempleado sea identity --> autoincremental
                 .ValueGeneratedOnAdd();
 
                 tb.Property(col => col.Nombre).HasMaxLength(50);
                 tb.Property(col => col.Email).HasMaxLength(100);
             });
 
-            modelBuilder.Entity<Empleado>().ToTable("Empleado");
+            modelBuilder.Entity<Empleado>().ToTable("Empleado"); // especifica nombre en singuloar
         
         }
     }
